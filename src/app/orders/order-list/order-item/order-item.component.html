@@ -1,0 +1,25 @@
+<a style="cursor: pointer;" class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">#{{ order.id }} <span class="label label-default"> {{order.status}}</span></h4>
+    <p class="list-group-item-text">{{ order.itens }}</p>
+    <p class="list-group-item-text">R$ {{ order.paidValue }}</p>
+  </div>
+  <span class="pull-right">
+    <div
+        class="btn-group"
+        appDropdown>
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle">
+          Mudar Status <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Confirmado</a></li>
+          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Em trânsito</a></li>
+          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Entregue</a></li>
+          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Cancelado</a></li>
+        </ul>
+      </div>
+  </span>
+</a>
+
