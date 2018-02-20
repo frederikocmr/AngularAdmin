@@ -1,7 +1,8 @@
 <a style="cursor: pointer;" class="list-group-item clearfix">
   <div class="pull-left dropdown-toggle" title='Clique para mais informações' appDropdown>
     <h4 class="list-group-item-heading">#{{ order.id }}
-      <span class="label label-default">
+      <span class="label" [ngClass]="(order.status == 1 ? 'label-default' : (order.status == 2 ? 'label-info' : (order.status == 3 ? 'label-warning' : (order.status
+      == 4 ? 'label-success' : 'label-danger'))))">
         {{(order.status == 1 ? 'Processando' : (order.status == 2 ? 'Confirmado' : (order.status == 3 ? 'Em Trânsito' : (order.status
         == 4 ? 'Entregue' : 'Cancelado'))))}}</span>
     </h4>

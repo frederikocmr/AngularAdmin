@@ -1,13 +1,20 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">App Admin</a>
+      <a routerLink="/" class="navbar-brand">Linguiças Piracanjuba - Admin</a>
+      <label (click)="toggleNavbar()" for="navbar-toggle" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar" [style.background-color]="navBarToggle ? '#dddddd' : 'transparent'">
+        <span class="sr-only">Mudar navegação</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </label>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse " [style.display]="navBarToggle ? 'block' : 'none'">
       <ul class="nav navbar-nav" *ngIf="isAuthenticated()">
         <li routerLinkActive="active">
-          <a routerLink="/orders">Pedidos</a>
+          <a routerLink="/pedidos">Pedidos</a>
         </li>
         <!-- <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>
         <li routerLinkActive="active"><a routerLink="/categorias">Categorias</a></li>

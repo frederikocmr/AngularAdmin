@@ -1,4 +1,17 @@
 <div class="jumbotron">
-  <h2><b>Seja bem vindo ao modulo Admin!</b></h2>
-  <p>Aqui você encontra...</p>
+  <h2><b>Seja bem vindo ao módulo Admin!</b></h2>
+  <div *ngIf="!isAuthenticated()">
+    <p>Você precisa logar para acessar as funcionalidades.</p>
+    <p><a routerLink='/'>Clique aqui para entrar!</a></p>
+  </div>
+  <div *ngIf="isAuthenticated()">
+      <p>Na <b>versão 1.0</b> deste módulo você poderá visualizar os <b>pedidos</b>, assim como alterar a informação de status dos mesmos.</p>
+      <p><i><b>Por exemplo</b>: um pedido acabou de ser gerado pelo site, este terá o status como "processando", a partir do momento em que
+        o administrador visualiza este pedido e deseja realizar a entrega, o mesmo pode mudar o seu status para "confirmado" e
+        posteriormente para "em entrega", para depois mudar para "entregue" ou "cancelado".</i>
+      </p>
+      <p><b>IMPORTANTE: O usuário receberá um email toda vez que o status do pedido for alterado!</b>
+      </p>
+      <p><a routerLink='/pedidos'>Clique aqui para ir aos pedidos!</a></p>
+  </div>
 </div>

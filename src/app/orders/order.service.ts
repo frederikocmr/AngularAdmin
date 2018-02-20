@@ -19,7 +19,7 @@ export class OrderService {
           }).then((result) => {
             alert('Sucesso ao editar status!');
           }).catch((error) => {
-            console.log('Error updating documents: ', error);
+            alert('Erro ao editar status: ' + error);
         });
       });
   })

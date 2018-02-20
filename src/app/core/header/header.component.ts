@@ -8,6 +8,8 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public navBarToggle = false;
+
   constructor(
     private authService: AuthService
   ) {}
@@ -19,6 +21,9 @@ export class HeaderComponent implements OnInit {
 
   isAuthenticated() {
     return this.authService.isAuthenticated();
+  }
+  toggleNavbar() {
+    this.navBarToggle = !this.navBarToggle;
   }
 
   ngOnInit() {}

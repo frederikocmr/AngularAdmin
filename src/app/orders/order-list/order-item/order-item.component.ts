@@ -18,7 +18,12 @@ export class OrderItemComponent implements OnInit {
 
   onSetOrderStatus(status: number, order: Order) {
     if (status > 0 && status <= 5) {
-      this.orderService.updateOrderStatus(status, order);
+      if (status !== order.status) {
+        this.orderService.updateOrderStatus(status, order);
+      } else {
+        alert('Este status já é o atual!');
+      }
+
     }
   }
 }

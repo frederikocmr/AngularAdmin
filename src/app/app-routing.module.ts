@@ -9,7 +9,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 const appRoutes: Routes = [
   { path: '', component: SigninComponent, canActivate: [AuthGuardIn] },
   { path: 'home', component: HomeComponent },
-  { path: 'orders', loadChildren: 'app/orders/orders.module#OrdersModule'},
+  { path: 'pedidos', loadChildren: 'app/orders/orders.module#OrdersModule'},
   { path: '**', component: NotFoundComponent }
 ];
 
