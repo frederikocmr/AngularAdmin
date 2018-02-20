@@ -13,7 +13,7 @@ import { Order } from '../order.model';
 export class OrderListComponent implements OnInit, OnDestroy {
   orders: Observable<Order[]>;
 
-  constructor(db: AngularFirestore) {
+  constructor(private db: AngularFirestore) {
     this.orders = db.collection<Order>('orders').valueChanges();
   }
 

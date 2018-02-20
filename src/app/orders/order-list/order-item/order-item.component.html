@@ -1,25 +1,52 @@
 <a style="cursor: pointer;" class="list-group-item clearfix">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">#{{ order.id }} <span class="label label-default"> {{order.status}}</span></h4>
-    <p class="list-group-item-text">{{ order.itens }}</p>
-    <p class="list-group-item-text">R$ {{ order.paidValue }}</p>
+  <div class="pull-left dropdown-toggle" title='Clique para mais informações' appDropdown>
+    <h4 class="list-group-item-heading">#{{ order.id }}
+      <span class="label label-default">
+        {{(order.status == 1 ? 'Processando' : (order.status == 2 ? 'Confirmado' : (order.status == 3 ? 'Em Trânsito' : (order.status
+        == 4 ? 'Entregue' : 'Cancelado'))))}}</span>
+    </h4>
+    <p class="list-group-item-text">{{ order.date | date:"MM/dd/yyyy" }}
+      <span class="glyphicon glyphicon-info-sign"></span>
+    </p>
+    <div class="info dropdown-menu">
+      <p class="list-group-item-text">
+        <strong>Produto: </strong>{{ order.itens }}</p>
+      <p class="list-group-item-text">
+        <strong>Valor: </strong>R$ {{ order.paidValue }}</p>
+      <p class="list-group-item-text">
+        <strong>Método de Pagamento: </strong>{{ order.paymentMethod }}</p>
+      <p class="list-group-item-text">
+        <strong>Opção de entrega: </strong>{{ order.deliveryOption }}</p>
+      <p class="list-group-item-text">
+        <strong>Endereço de Entrega: </strong>{{ order.address }}</p>
+      <p class="list-group-item-text">
+        <strong>Nome Contato: </strong>{{ order.contactName }}</p>
+      <p class="list-group-item-text">
+        <strong>Email Usuário: </strong>{{ order.email }}</p>
+      <p class="list-group-item-text">
+        <strong>Data Registro: </strong>{{ order.date | date:"MM/dd/yyyy" }}</p>
+    </div>
   </div>
   <span class="pull-right">
-    <div
-        class="btn-group"
-        appDropdown>
-        <button
-          type="button"
-          class="btn btn-primary dropdown-toggle">
-          Mudar Status <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Confirmado</a></li>
-          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Em trânsito</a></li>
-          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Entregue</a></li>
-          <li><a style="cursor: pointer;" (click)="onSelOrder(order);" >Cancelado</a></li>
-        </ul>
-      </div>
+    <div class="btn-group" appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">
+        Mudar Status
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a style="cursor: pointer;" (click)="onSetOrderStatus(2, order);">Confirmado</a>
+        </li>
+        <li>
+          <a style="cursor: pointer;" (click)="onSetOrderStatus(3, order);">Em trânsito</a>
+        </li>
+        <li>
+          <a style="cursor: pointer;" (click)="onSetOrderStatus(4, order);">Entregue</a>
+        </li>
+        <li>
+          <a style="cursor: pointer;" (click)="onSetOrderStatus(5, order);">Cancelado</a>
+        </li>
+      </ul>
+    </div>
   </span>
 </a>
-

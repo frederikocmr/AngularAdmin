@@ -9,6 +9,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { OrderItemComponent } from './order-list/order-item/order-item.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     OrdersRoutingModule,
     SharedModule,
     AngularFirestoreModule
-  ]
+  ],
+  providers: [OrderService]
 })
 export class OrdersModule {}
