@@ -5,7 +5,7 @@ import { SigninComponent } from './signin/signin.component';
 import { AuthGuardIn } from './auth-guard-in.service';
 
 const authRoutes: Routes = [
-  { path: 'signin', component: SigninComponent, canActivate: [AuthGuardIn] }
+  { path: 'entrar', component: SigninComponent, canActivate: [AuthGuardIn] }
 ];
 
 @NgModule({

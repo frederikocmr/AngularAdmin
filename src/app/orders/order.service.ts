@@ -8,25 +8,27 @@ export class OrderService {
   constructor(private db: AngularFirestore) {}
 
   updateOrderStatus(status: number, order: Order) {
-  console.log('Novo Status: ' + status + '\n para ' + order.id);
-
-  const orderRef = this.db.firestore.collection('orders');
-  const query = orderRef.where('id', '==', order.id).get()
-  .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-          orderRef.doc(doc.id).update({
-            status: status
-          }).then((result) => {
-            alert('Sucesso ao editar status!');
-          }).catch((error) => {
-            alert('Erro ao editar status: ' + error);
+    const orderRef = this.db.firestore.collection('orders');
+    const query = orderRef
+      .where('id', '==', order.id)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          orderRef
+            .doc(doc.id)
+            .update({
+              status: status
+            })
+            .then(result => {
+              alert('Sucesso ao editar status!');
+            })
+            .catch(error => {
+              alert('Erro ao editar status: ' + error);
+            });
         });
+      })
+      .catch(error => {
+        alert('Erro: ' + error);
       });
-  })
-  .catch((error) => {
-      console.log('Error getting documents: ', error);
-  });
-
   }
-
 }

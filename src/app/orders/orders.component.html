@@ -1,13 +1,20 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Pedidos:</h3>
-          </div>
-          <div class="panel-body">
-              <app-order-list></app-order-list>
-          </div>
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Pedidos:
+          <span class="orderby pull-right panel-title">
+              <span title='Ordem Alfabética A-Z' class="glyphicon glyphicon-sort-by-alphabet"></span>
+              <span title='Ordem Alfabética Z-A' class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+              <span title='Ordem Cadastro Crescente' class="active glyphicon glyphicon-sort-by-order"></span>
+              <span title='Ordem Cadastro Decrescente' class="glyphicon glyphicon-sort-by-order-alt"></span>
+          </span>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <app-order-list></app-order-list>
+      </div>
+    </div>
 
   </div>
 </div>

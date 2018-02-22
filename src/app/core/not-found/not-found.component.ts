@@ -13,3 +13,10 @@ export class NotFoundComponent implements OnInit {
   }
 
 }
+
+
+/*
+ Autenticar somente 2 usuários -> lp@gm e slp@gm
+   Para isso, usar uID...
+
+*/

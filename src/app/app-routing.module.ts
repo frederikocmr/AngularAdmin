@@ -5,11 +5,14 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { HomeComponent } from './core/home/home.component';
 import { AuthGuardIn } from './auth/auth-guard-in.service';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { UsersComponent } from './core/users/users.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
-  { path: '', component: SigninComponent, canActivate: [AuthGuardIn] },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'inicio', component: HomeComponent },
   { path: 'pedidos', loadChildren: 'app/orders/orders.module#OrdersModule'},
+  { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -19,7 +22,8 @@ const appRoutes: Routes = [
   ],
   exports: [RouterModule],
   providers: [
-    AuthGuardIn
+    AuthGuardIn,
+    AuthGuard
   ]
 })
 export class AppRoutingModule {

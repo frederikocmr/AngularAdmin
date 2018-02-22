@@ -9,15 +9,21 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
+  constructor(private authService: AuthService) {}
 
-  constructor(private authService: AuthService) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSignin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signinUser(email, password);
+    if (email && password) {
+      if (email === 'suporte.linguicaspiracanjuba@gmail.com') {
+        this.authService.signinUser(email, password);
+      } else {
+        alert('Sem permissão!');
+      }
+    } else {
+      alert('Todos os campos são obrigatórios!');
+    }
   }
 }

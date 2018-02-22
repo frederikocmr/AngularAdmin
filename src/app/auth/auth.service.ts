@@ -7,10 +7,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class AuthService {
   token: string;
   private authState: any;
+  private userId: string;
 
   constructor(private router: Router, private db: AngularFireAuth) {
   this.db.authState.subscribe((auth) => {
     this.authState = auth;
+    this.userId = (auth ? auth.uid : '');
   });
 }
 
@@ -18,7 +20,7 @@ export class AuthService {
     this.db.auth.signInWithEmailAndPassword(email, password)
       .then(
         response => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/inicio']);
           this.db.auth.currentUser.getIdToken()
             .then(
               (token: string) => this.token = token
@@ -26,7 +28,7 @@ export class AuthService {
         }
       )
       .catch(
-        error => console.log(error)
+        error => alert(error)
       );
   }
 
@@ -45,6 +47,6 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return this.authState !== null;
+    return (this.authState !== null && this.userId === 'qVJq1O1uP6c1rfsTGekhVIeyxrQ2');
   }
 }

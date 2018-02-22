@@ -10,22 +10,34 @@
       <span class="glyphicon glyphicon-info-sign"></span>
     </p>
     <div class="info dropdown-menu">
+      <span class="pull-right glyphicon glyphicon-remove"></span>
       <p class="list-group-item-text">
-        <strong>Produto: </strong>{{ order.itens }}</p>
+        <strong> #{{ order.id }}</strong>
+      </p>
       <p class="list-group-item-text">
-        <strong>Valor: </strong>R$ {{ order.paidValue }}</p>
+        <strong>Produto: </strong>{{ order.itens }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Método de Pagamento: </strong>{{ order.paymentMethod }}</p>
+        <strong>Valor: </strong>R$ {{ order.paidValue }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Opção de entrega: </strong>{{ order.deliveryOption }}</p>
+        <strong>Método de Pagamento: </strong>{{ order.paymentMethod }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Endereço de Entrega: </strong>{{ order.address }}</p>
+        <strong>Opção de entrega: </strong>{{ order.deliveryOption }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Nome Contato: </strong>{{ order.contactName }}</p>
+        <strong>Endereço de Entrega: </strong>{{ order.address }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Email Usuário: </strong>{{ order.email }}</p>
+        <strong>Nome Contato: </strong>{{ order.contactName }}
+      </p>
       <p class="list-group-item-text">
-        <strong>Data Registro: </strong>{{ order.date | date:"MM/dd/yyyy" }}</p>
+        <strong>Email Usuário: </strong>{{ order.email }}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Data Registro: </strong>{{ order.date | date:"MM/dd/yyyy" }}
+      </p>
     </div>
   </div>
   <span class="pull-right">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a routerLink="/" class="navbar-brand">Linguiças Piracanjuba - Admin</a>
@@ -16,8 +16,8 @@
         <li routerLinkActive="active">
           <a routerLink="/pedidos">Pedidos</a>
         </li>
-        <!-- <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>
-        <li routerLinkActive="active"><a routerLink="/categorias">Categorias</a></li>
+        <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>
+        <!-- <li routerLinkActive="active"><a routerLink="/categorias">Categorias</a></li>
         <li routerLinkActive="active"><a routerLink="/produtos">Produtos</a></li>
         <li routerLinkActive="active"><a routerLink="/checkout">Checkout</a></li>
         <li routerLinkActive="active"><a routerLink="/novidades">Novidades</a></li>
@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav navbar-right">
         <ng-template [ngIf]="!isAuthenticated()">
           <li>
-            <a routerLink="/">Entrar
+            <a routerLink="/entrar">Entrar
               <span class="glyphicon glyphicon-log-in"></span>
             </a>
           </li>

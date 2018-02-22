@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Usuários:
+          <span class="orderby pull-right panel-title">
+              <span title='Ordem Alfabética A-Z' class="glyphicon glyphicon-sort-by-alphabet"></span>
+              <span title='Ordem Alfabética Z-A' class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+              <span title='Ordem Cadastro Crescente' class="active glyphicon glyphicon-sort-by-order"></span>
+              <span title='Ordem Cadastro Decrescente' class="glyphicon glyphicon-sort-by-order-alt"></span>
+          </span>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div *ngFor="let user of users | async">
+          <div class="row ">
+            <div class="col-xs-12">
+              <a style="cursor: pointer;" class=" dropdown-toggle list-group-item clearfix" appDropdown>
+                <div class="pull-left" title='Clique para mais informações'>
+                  <h4 class="list-group-item-heading">
+                    {{user.email}}
+                  </h4>
+                  <p class="list-group-item-text">
+                    {{user.displayName}}
+                    <span class=" glyphicon glyphicon-info-sign"></span>
+                  </p>
+                </div>
+                <span class="pull-right">
+                  <p class="list-group-item-text">Pedidos: {{(user.orders ? user.orders.length : 0)}}
+                  </p>
+                </span>
+                <div class="info dropdown-menu">
+                  <span class="pull-right glyphicon glyphicon-remove"></span>
+                  <p class="list-group-item-text">
+                    <strong>{{user.displayName}}</strong>
+                  </p>
+                  <p class="list-group-item-text">
+                    <strong>Telefone: </strong> {{(user.phoneNumber ? user.phoneNumber : 'Não cadastrado')}}
+                  </p>
+                  <p class="list-group-item-text">
+                    <strong>CPF/CNPJ: </strong> {{(user.document ? user.document : 'Não cadastrado')}}
+                  </p>
+                  <p class="list-group-item-text">
+                    <strong>Data Nasc.: </strong> {{(user.birthDate ? (user.birthDate | date) : 'Não cadastrado')}}
+                  </p>
+                  <p class="list-group-item-text">
+                    <strong>Sexo: </strong> {{(user.gender == 'm' || user.gender == 'M' ? 'Masculino' : 'Feminino')}}
+                  </p>
+                  <p class="list-group-item-text">
+                    <strong>Endereço(s): </strong>
+                    <br>
+                    <span *ngFor="let addr of user.adresses">
+                      {{addr.addressLine}}, {{addr.number}}, {{addr.complement}} ({{addr.reference}}), {{addr.district}}, {{addr.city}} - {{addr.state}}
+                      / CEP {{addr.postalCode}}
+                      <br> Contato: {{addr.personName}}
+                    </span>
+                  </p>
+                  <br>
+                  <p class="list-group-item-text">
+                    <strong>Pedidos: </strong>
+                    <span *ngFor="let order of user.orders; let i = index">
+                      <br>
+                      <strong>({{i+1}}) </strong>
+                      <br> ID: #{{order.id}}
+                      <br> Itens: {{order.itens}}
+                      <br>
+                    </span>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
