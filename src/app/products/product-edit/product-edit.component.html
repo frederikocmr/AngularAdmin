@@ -1,0 +1,40 @@
+<div class='editProduct'>
+  <h4>Cadastro de Produto</h4>
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" class="form-control" id="name" placeholder="Insira o nome" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição:</label>
+      <input type="text" class="form-control" id="description" placeholder="Insira a descrição" name="description">
+    </div>
+    <div class="form-group">
+      <label for="price">Valor:</label>
+      <input type="number" class="form-control" id="price" placeholder="Insira o preço (números apenas)" name="price">
+    </div>
+    <div class="form-group">
+      <label for="measure">Medida:</label>
+      <input type="text" class="form-control" id="measure" placeholder="Insira a medida (kg ou un)" name="measure">
+    </div>
+    <div class="form-group">
+        <label for="categoryPath">Categoria:</label>
+        <select class="form-control" id="categoryPath" placeholder="Insira a categoria" name="categoryPath">
+          <option value="linguicas-tradicionais">Linguiças Tradicionais</option>
+          <option value="linguicas-recheadas">Linguiças Recheadas</option>
+          <option value="derivados-suino">Derivados de Suínos</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label for="img">Imagem:</label>
+      <input type="text" class="form-control" id="img" placeholder="Insira o link da imagem" name="img">
+    </div>
+    <button  (click)="onClearForm()" type="submit" class="btn btn-success pull-right">Cadastrar
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    <button (click)="onClearForm()" class="btn btn-default ">Limpar
+        <span class="glyphicon glyphicon-erase"></span>
+      </button>
+  </form>
+
+</div>
