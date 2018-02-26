@@ -1,17 +1,155 @@
 <div class="jumbotron">
-  <h2><b>Seja bem vindo ao módulo Admin!</b></h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 text-left">Desenvolvido por:
+      <b>FREDERIKO C. M. RIBEIRO</b>
+    </div>
+    <div class="col-xs-12 col-sm-6 text-right">Email para contato:
+      <b>frederiko.cmr@gmail.com</b>
+    </div>
+  </div>
+  <h2>
+    <b>Seja bem vindo ao módulo Admin!</b>
+  </h2>
   <div *ngIf="!isAuthenticated()">
     <p>Você precisa logar para acessar as funcionalidades.</p>
-    <p><a routerLink='/entrar'>Clique aqui para entrar!</a></p>
+    <p>
+      <a routerLink='/entrar'>Clique aqui para entrar!</a>
+    </p>
   </div>
   <div *ngIf="isAuthenticated()">
-      <p>Na <b>versão 1.0</b> deste módulo você poderá visualizar os <b>pedidos</b>, assim como alterar a informação de status dos mesmos.</p>
-      <p><i><b>Por exemplo</b>: um pedido acabou de ser gerado pelo site, este terá o status como "processando", a partir do momento em que
-        o administrador visualiza este pedido e deseja realizar a entrega, o mesmo pode mudar o seu status para "confirmado" e
-        posteriormente para "em entrega", para depois mudar para "entregue" ou "cancelado".</i>
-      </p>
-      <p><b>IMPORTANTE: O cliente receberá um email toda vez que o status do pedido for alterado!</b>
-      </p>
-      <p><a routerLink='/pedidos'>Clique aqui para ir aos pedidos!</a></p>
+    <p>Na
+      <b>versão 1.0</b> deste módulo você poderá:
+    </p>
+    <ul>
+      <li>
+        <p>Visualizar e alterar os status dos
+          <b>pedidos;</b>
+        </p>
+      </li>
+      <li>
+        <p>Visualizar os
+          <b>usuários</b> que estão cadastrados;</p>
+      </li>
+      <li>
+        <p>Cadastrar e excluir
+          <b>produtos;</b>
+        </p>
+      </li>
+      <li>
+        <p>Visualizar formulários de
+          <b>contatos</b> de usuários.</p>
+      </li>
+    </ul>
+    <br>
+    <div class="container-fluid">
+      <div class="row content">
+
+
+        <div class="col-sm-12">
+          <hr>
+          <h4>
+            <small>ALGUMAS INSTRUÇÕES</small>
+          </h4>
+
+          <h2>Pedidos</h2>
+          <h5>
+            <span class="glyphicon glyphicon-new-window"></span>
+            <a routerLink='/pedidos'>Clique aqui para ir aos pedidos!</a>
+          </h5>
+          <br>
+          <p>Os pedidos são feitos no site e após isto, o registro é gerado no sistema, e então é possível visualizá-los neste
+            módulo.
+          </p>
+          <p>Cada pedido possui os produtos requisitados, a quantidade de cada um juntamente com sua medida, o valor total,
+            o método de pagamento e a opção escolhidas pelo cliente, o endereço de entrega, o nome do destinatário, o email
+            do usuário que gerou o pedido, a data de registro e por fim o ID do pedido. </p>
+          <p>
+            <p>E o mais importante aqui é o
+              <b>STATUS</b> do pedido, onde quando feito, este se inicia com status de "PROCESSANDO", para depois outros status
+              serem definidos neste módulo.</p>
+            <p>
+              <i>
+                <b>Por exemplo</b>: um pedido acabou de ser gerado pelo site, este terá o status como "processando", a partir
+                do momento em que o administrador visualiza este pedido e deseja realizar a entrega, o mesmo pode mudar o
+                seu status para "confirmado" e posteriormente para "em entrega", para depois mudar para "entregue" ou "cancelado".</i>
+            </p>
+            <p>
+              <b>IMPORTANTE: O cliente receberá um email toda vez que o status do pedido for alterado!</b>
+            </p>
+            <br>
+            <br>
+            <hr>
+            <h4>
+              <small>ALGUMAS INSTRUÇÕES</small>
+            </h4>
+            <h2>Usuários</h2>
+            <h5>
+              <span class="glyphicon glyphicon-new-window"></span>
+              <a routerLink='/usuarios'>Clique aqui para visualizar os usuários!</a>
+            </h5>
+
+            <br>
+            <p>Neste módulo você poderá visualizar os usuários que estão cadastrados, juntamente com as informações fornecidas
+              por ele na hora do cadastro, tais como nome, documento (CPF/CNPJ), endereços, pedidos feitos, email, data de
+              nascimento e outros.</p>
+            <p>Para
+              <b>visualizar mais informações</b> do usuário, basta clicar no registro e então uma janela com mais informações
+              abrirá.
+            </p>
+
+            <br>
+            <br>
+            <hr>
+            <h4>
+              <small>ALGUMAS INSTRUÇÕES</small>
+            </h4>
+            <h2>Produtos</h2>
+            <h5>
+              <span class="glyphicon glyphicon-new-window"></span>
+              <a routerLink='/produtos'>Clique aqui para ir aos produtos!</a>
+            </h5>
+
+            <br>
+            <p>Os produtos são listados e aqueles existentes podem ser excluídos ou novos podem ser adicionados através do formulário
+              de cadastro.</p>
+            <p>Cada produto possui nome, descrição, categoria, preço, medida e url da imagem.</p>
+            <p>Para
+              <b>adicionar novos produtos</b>, basta preencher o formulário corretamente e clicar no botão cadastrar. Após isto,
+              uma mensagem de sucesso aparecerá e então o seu produto será listado na loja. E
+              <b>para excluir</b>, basta clicar no botão que se encontra ao lado da listagem de cada.</p>
+            <p>A funcionalidade de cadastro de categorias ainda não foi implementada.</p>
+            <p>Para cadastrar o URL da imagem, é necessário informar um link de uma imagem que está hospedada na internet. A
+              funcionalidade de fazer upload de imagens ainda não foi implementada.</p>
+            <p>Para
+              <b>visualizar mais informações do produto</b>, basta clicar no registro e então uma janela com mais informações
+              abrirá.
+            </p>
+            <br>
+            <br>
+            <hr>
+            <h4>
+              <small>ALGUMAS INSTRUÇÕES</small>
+            </h4>
+
+            <h2>Contatos</h2>
+            <h5>
+              <span class="glyphicon glyphicon-new-window"></span>
+              <a routerLink='/contatos'>Clique aqui para visualizar os contatos!</a>
+            </h5>
+
+            <br>
+            <p>A listagem dos contatos se refere à pagina de Contato do Site, onde o usuário preenche um formulário e então
+              após cadastrar, o registro é feito e
+              <b>um email é enviado para o administrador</b>.</p>
+            <p>
+              <b>Para responder o contato</b>, utilize o email da empresa e envie para o email que foi cadastrado no registro
+              do formulário de contato.</p>
+            <p>Para
+              <b>visualizar mais informações do contato</b>, como mensagem e dados do usuário, basta clicar no registro e então
+              uma janela com mais informações abrirá.
+            </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

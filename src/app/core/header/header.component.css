@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #af272d;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #913338;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: #347135;
+}
