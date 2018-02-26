@@ -3,3 +3,8 @@
   padding-right: 20px;
   padding-bottom: 20px;
 }
+.alert {
+  padding: 2px;
+  font-size: .9em;
+  margin-bottom: 1px;
+}

@@ -3,14 +3,11 @@
     <h4 class="list-group-item-heading">
       {{ product.name }}
     </h4>
-    <p class="list-group-item-text">#{{ product.id }}
+    <p class="list-group-item-text">R$ {{ product.price }} / {{ product.measure}}
       <span class="glyphicon glyphicon-info-sign"></span>
     </p>
     <div class="info dropdown-menu">
       <span class="pull-right glyphicon glyphicon-remove"></span>
-      <p class="list-group-item-text">
-        <strong> #{{ product.id }}</strong>
-      </p>
       <p class="list-group-item-text">
         <strong>Nome: </strong>{{ product.name }}
       </p>
@@ -25,19 +22,19 @@
       </p>
       <p class="list-group-item-text">
         <strong>Categoria: </strong>
-        {{ (product.categoryPath == 'linguicas-tradicionais' ? 'Linguiças Tradicionais' : ( product.categoryPath == 'linguicas-recheadas' ? 'Linguiças Recheadas' : ( product.categoryPath
-        == 'derivados-porco' ? 'Derivados de Suínos' : 'Nenhum cadastrado'))) }}
+        {{ (product.categoryPath == 'linguicas-tradicionais' ? 'Linguiças Tradicionais' : ( product.categoryPath == 'linguicas-recheadas'
+        ? 'Linguiças Recheadas' : ( product.categoryPath == 'derivados-suinos' ? 'Derivados de Suínos' : 'Nenhum cadastrado')))
+        }}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Link imagem: </strong>{{ product.img}}
       </p>
 
     </div>
   </div>
   <span class="pull-right">
     <div class="btn-group">
-      <button (click)="onEditItem(product)" type="button" class="btn btn-primary">
-        Editar
-        <span class="glyphicon glyphicon-edit"></span>
-      </button>
-      <button (click)="onEditItem(product)" type="button" class="btn btn-danger">
+      <button (click)="onDeleteItem(product)" type="button" class="btn btn-danger">
         Deletar
         <span class="glyphicon glyphicon-trash"></span>
       </button>

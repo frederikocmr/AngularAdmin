@@ -1,40 +1,48 @@
 <div class='editProduct'>
   <h4>Cadastro de Produto</h4>
-  <form action="/action_page.php">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmitForm(productForm)">
     <div class="form-group">
       <label for="name">Nome:</label>
-      <input type="text" class="form-control" id="name" placeholder="Insira o nome" name="name">
+      <input type="text" class="form-control" id="name" placeholder="Insira o nome" name="name" formControlName="name">
+      <div class="alert alert-danger" *ngIf="!productForm.controls['name'].valid && productForm.controls['name'].touched">O nome é obrigatório e deve ter no mínimo 3 e no máximo 80 caracteres.</div>
     </div>
     <div class="form-group">
       <label for="description">Descrição:</label>
-      <input type="text" class="form-control" id="description" placeholder="Insira a descrição" name="description">
+      <input type="text" class="form-control" id="description" placeholder="Insira a descrição" name="description" formControlName="description">
+      <div class="alert alert-danger" *ngIf="!productForm.controls['description'].valid && productForm.controls['description'].touched">A descrição é obrigatório e deve ter no mínimo 10 e no máximo 130 caracteres.</div>
     </div>
     <div class="form-group">
       <label for="price">Valor:</label>
-      <input type="number" class="form-control" id="price" placeholder="Insira o preço (números apenas)" name="price">
+      <input type="number" class="form-control" id="price" placeholder="Insira o preço (números apenas)" name="price" formControlName="price">
+      <div class="alert alert-danger" *ngIf="!productForm.controls['price'].valid && productForm.controls['price'].touched">O preço é obrigatório e deve conter apenas números (a casa decimal é separada por ponto ao invés de virgula).</div>
+
     </div>
     <div class="form-group">
       <label for="measure">Medida:</label>
-      <input type="text" class="form-control" id="measure" placeholder="Insira a medida (kg ou un)" name="measure">
+      <input type="text" class="form-control" id="measure" placeholder="Insira a medida (kg ou un)" name="measure" formControlName="measure">
+      <div class="alert alert-danger" *ngIf="!productForm.controls['measure'].valid && productForm.controls['measure'].touched">A medida é obrigatória e deve ser informada contendo apenas 2 caracteres (ex.: 'kg' ou 'un')</div>
+
     </div>
     <div class="form-group">
-        <label for="categoryPath">Categoria:</label>
-        <select class="form-control" id="categoryPath" placeholder="Insira a categoria" name="categoryPath">
-          <option value="linguicas-tradicionais">Linguiças Tradicionais</option>
-          <option value="linguicas-recheadas">Linguiças Recheadas</option>
-          <option value="derivados-suino">Derivados de Suínos</option>
-        </select>
-      </div>
+      <label for="categoryPath">Categoria:</label>
+      <select class="form-control" id="categoryPath" placeholder="Insira a categoria" name="categoryPath" formControlName="categoryPath">
+        <option value="linguicas-tradicionais">Linguiças Tradicionais</option>
+        <option value="linguicas-recheadas">Linguiças Recheadas</option>
+        <option value="derivados-suinos">Derivados de Suínos</option>
+      </select>
+    </div>
     <div class="form-group">
       <label for="img">Imagem:</label>
-      <input type="text" class="form-control" id="img" placeholder="Insira o link da imagem" name="img">
+      <input type="text" class="form-control" id="img" placeholder="Insira o link da imagem" name="img" formControlName="img">
+      <div class="alert alert-danger" *ngIf="!productForm.controls['img'].valid && productForm.controls['img'].touched">O link da imagem é obrigatório.</div>
+
     </div>
-    <button  (click)="onClearForm()" type="submit" class="btn btn-success pull-right">Cadastrar
+    <button type="submit" class="btn btn-success pull-right" [disabled]="!productForm.valid">Cadastrar
       <span class="glyphicon glyphicon-plus"></span>
     </button>
-    <button (click)="onClearForm()" class="btn btn-default ">Limpar
-        <span class="glyphicon glyphicon-erase"></span>
-      </button>
+    <button (click)="onClearForm()" type="button" class="btn btn-default">Limpar
+      <span class="glyphicon glyphicon-erase"></span>
+    </button>
   </form>
 
 </div>

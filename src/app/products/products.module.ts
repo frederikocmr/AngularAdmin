@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
@@ -11,7 +12,7 @@ import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [ProductListComponent, ProductItemComponent, ProductsComponent, ProductEditComponent],
-  imports: [CommonModule, SharedModule, ProductsRoutingModule],
+  imports: [CommonModule, SharedModule, ProductsRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [ProductService]
 })
 export class ProductsModule {}

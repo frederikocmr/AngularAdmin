@@ -11,14 +11,17 @@ import { ProductService } from '../../product.service';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
   @Input() index: number;
-  constructor(private prodService: ProductService) { }
+  constructor(private prodService: ProductService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onDeleteItem(product: Product) {
+    if (
+      confirm(
+        'Você tem certeza em que deseja excluir o produto ' + product.name + '?'
+      )
+    ) {
+      this.prodService.deleteProduct(product);
+    }
   }
-
-  onEditItem( product: Product) {
-    alert('Funcionalidade indisponível!');
-
-  }
-
 }
