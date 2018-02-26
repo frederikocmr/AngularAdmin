@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Linguiças Piracanjuba - Admin</a>
+      <a routerLink="/" class="navbar-brand">LP Admin</a>
       <label (click)="toggleNavbar()" for="navbar-toggle" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
         aria-controls="navbar" [style.background-color]="navBarToggle ? '#dddddd' : 'transparent'">
         <span class="sr-only">Mudar navegação</span>
@@ -18,6 +18,7 @@
         </li>
         <li routerLinkActive="active"><a routerLink="/usuarios">Usuários</a></li>
         <li routerLinkActive="active"><a routerLink="/produtos">Produtos</a></li>
+        <li routerLinkActive="active"><a routerLink="/contatos">Contatos</a>
         <!-- <li routerLinkActive="active"><a routerLink="/categorias">Categorias</a></li>
 
         <li routerLinkActive="active"><a routerLink="/checkout">Checkout</a></li>

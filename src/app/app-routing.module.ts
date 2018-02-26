@@ -13,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'inicio', component: HomeComponent },
   { path: 'pedidos', loadChildren: 'app/orders/orders.module#OrdersModule'},
   { path: 'produtos', loadChildren: 'app/products/products.module#ProductsModule'},
+  { path: 'contatos', loadChildren: 'app/contact/contact.module#ContactModule'},
   { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];

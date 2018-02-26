@@ -1,0 +1,2 @@
+<h4>Listagem de Formulários de Contato</h4>
+<app-contact-item *ngFor="let contactEl of contacts | async; let i = index" [contact]="contactEl" [index]="i"></app-contact-item>

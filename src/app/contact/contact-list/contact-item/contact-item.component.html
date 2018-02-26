@@ -1,0 +1,33 @@
+<a style="cursor: pointer;" class="list-group-item clearfix">
+  <div class="pull-left  dropdown-toggle" title='Clique para mais informações' appDropdown>
+    <h4 class="list-group-item-heading">
+      {{ contact.email }}
+    </h4>
+    <p class="list-group-item-text">#{{ contact.fid }}
+      <span class="glyphicon glyphicon-info-sign"></span>
+    </p>
+    <div class="info dropdown-menu">
+      <span class="pull-right glyphicon glyphicon-remove"></span>
+      <p class="list-group-item-text">
+        <strong>Email: </strong>{{ contact.email }}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Nome: </strong>{{ contact.name }}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Mensagem: </strong>{{ contact.message }}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Tipo: </strong>{{ contact.type}}
+      </p>
+      <p class="list-group-item-text">
+        <strong>Data: </strong>{{ contact.date | date:"MM/dd/yyyy"}}
+      </p>
+    </div>
+  </div>
+  <span class="pull-right">
+    <p class="list-group-item-text">
+      {{ contact.date | date:"MM/dd/yyyy"}}
+    </p>
+  </span>
+</a>
