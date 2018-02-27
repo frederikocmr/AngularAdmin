@@ -1,6 +1,6 @@
 <div class='editProduct'>
   <h4>Cadastro de Produto</h4>
-  <form [formGroup]="productForm" (ngSubmit)="onSubmitForm(productForm)">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmitForm()">
     <div class="form-group">
       <label for="name">Nome:</label>
       <input type="text" class="form-control" id="name" placeholder="Insira o nome" name="name" formControlName="name">
