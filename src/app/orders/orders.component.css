@@ -7,8 +7,3 @@
 .orderby .active {
   color: black;
 }
-.panel-default > .panel-heading {
-  color: white;
-  background-color: #af272d;
-  border-color: #ddd;
-}

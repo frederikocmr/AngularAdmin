@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.panel-default,
+.jumbotron {
+  -webkit-box-shadow: 3px 3px 22px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 3px 3px 22px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 3px 3px 22px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+.navbar-default {
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+.btn {
+  -webkit-box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.75) !important;
+}
+.dropdown-menu {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75) !important;
+}
+hr {
+  border: 1px solid #c2c2c2 !important;
+}
