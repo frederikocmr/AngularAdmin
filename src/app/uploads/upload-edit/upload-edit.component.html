@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4>Envio de Imagens</h4>
+      <p>Lembre-se de enviar uma imagem com tamanho menor que 150Kb para melhorar a velocidade do site.</p>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Selecione um arquivo (.PNG ou .JPG) para enviar:</h5>
+      <input type="file" (change)="upload($event)" class="btn-send btn btn-primary" accept=".png,.jpg" />
+    </div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'"
+      [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+  <div class="information">
+    <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+      <strong>Endereço do arquivo enviado (copie-o para inserir no cadastro de produtos):</strong>
+      <p class="link-text">{{downloadSrc}}</p>
+      <br>
+    </div>
+  </div>
+
+</div>
+
+<br>

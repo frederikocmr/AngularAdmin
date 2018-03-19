@@ -11,23 +11,28 @@ import { AuthGuard } from './auth/auth-guard.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'inicio', component: HomeComponent },
-  { path: 'pedidos', loadChildren: 'app/orders/orders.module#OrdersModule'},
-  { path: 'produtos', loadChildren: 'app/products/products.module#ProductsModule'},
-  { path: 'contatos', loadChildren: 'app/contact/contact.module#ContactModule'},
+  { path: 'pedidos', loadChildren: 'app/orders/orders.module#OrdersModule' },
+  {
+    path: 'produtos',
+    loadChildren: 'app/products/products.module#ProductsModule'
+  },
+  {
+    path: 'contatos',
+    loadChildren: 'app/contact/contact.module#ContactModule'
+  },
+  {
+    path: 'uploads',
+    loadChildren: 'app/uploads/uploads.module#UploadsModule'
+  },
   { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule],
-  providers: [
-    AuthGuardIn,
-    AuthGuard
-  ]
+  providers: [AuthGuardIn, AuthGuard]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

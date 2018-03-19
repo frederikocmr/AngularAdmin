@@ -1,0 +1,21 @@
+<h4>
+  Imagens Cadastradas
+</h4>
+<div class="panel-body">
+  <div *ngFor="let image of images | async; let i = index">
+    <div class="row ">
+      <div class="col-xs-12">
+        <a style="cursor: pointer;" class=" dropdown-toggle list-group-item clearfix" appDropdown>
+          <div class="pull-right" title='Clique para mais informações'>
+            <p class="list-group-item-text">
+              {{image.path}}
+            </p>
+          </div>
+          <div class="pull-left">
+            <img width="50" height="50" src="{{image.path}}" alt="imagem">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
