@@ -1,2 +1,6 @@
 <h4>Listagem de Formulários de Contato</h4>
+<span *ngIf="contacts | async; else loading"></span>
+<ng-template #loading>
+  <div class="loader"></div>
+</ng-template>
 <app-contact-item *ngFor="let contactEl of contacts | async; let i = index" [contact]="contactEl" [index]="i"></app-contact-item>

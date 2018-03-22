@@ -8,13 +8,14 @@ export class ProductService {
   constructor(private db: AngularFirestore) {}
 
   public addProduct(product: Product) {
+    product.id = '#' + Date.now();
     this.db
       .collection('products')
       .add(product)
-      .then(function(docRef) {
+      .then(docRef => {
         alert('Documento cadastrado com sucesso!');
       })
-      .catch(function(error) {
+      .catch(error => {
         alert('Erro ao cadastrar: ' + error);
       });
   }

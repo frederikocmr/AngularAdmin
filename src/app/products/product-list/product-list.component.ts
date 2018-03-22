@@ -15,7 +15,5 @@ export class ProductListComponent implements OnInit {
     this.products = db.collection<Product>('products').valueChanges();
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

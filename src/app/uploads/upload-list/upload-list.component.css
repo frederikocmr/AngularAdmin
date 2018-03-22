@@ -1,3 +1,5 @@
 .list-group-item-text {
   font-size: 11px;
+  cursor: col-resize;
+  font-weight: bold;
 }

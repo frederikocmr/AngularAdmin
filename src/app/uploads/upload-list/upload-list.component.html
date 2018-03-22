@@ -2,17 +2,22 @@
   Imagens Cadastradas
 </h4>
 <div class="panel-body">
+  <span *ngIf="images | async; else loading"></span>
+  <ng-template #loading>
+    <div class="loader"></div>
+  </ng-template>
   <div *ngFor="let image of images | async; let i = index">
     <div class="row ">
       <div class="col-xs-12">
         <a style="cursor: pointer;" class=" dropdown-toggle list-group-item clearfix" appDropdown>
-          <div class="pull-right" title='Clique para mais informações'>
+          <div class="pull-right" title='Três cliques para selecionar tudo'>
+            <h5>Copie este link:</h5>
             <p class="list-group-item-text">
               {{image.path}}
             </p>
           </div>
-          <div class="pull-left">
-            <img width="50" height="50" src="{{image.path}}" alt="imagem">
+          <div class=" pull-left ">
+            <img width="50 " height="50 " src="{{image.path}} " alt="imagem ">
           </div>
         </a>
       </div>

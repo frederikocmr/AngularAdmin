@@ -8,12 +8,12 @@ export class Product {
   public categoryPath: string;
 
   public updateFrom(src: Product): void {
-      this.id = src.id;
-      this.name = src.name;
-      this.description = src.description;
-      this.price = src.price;
-      this.img = src.img;
-      this.categoryPath = src.categoryPath;
-      this.measure = src.measure;
+    this.id = src.id;
+    this.name = src.name;
+    this.description = src.description;
+    this.price = src.price;
+    this.img = src.img;
+    this.categoryPath = src.categoryPath;
+    this.measure = src.measure;
   }
 }

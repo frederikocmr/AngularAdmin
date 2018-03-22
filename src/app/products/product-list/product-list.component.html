@@ -1,2 +1,6 @@
 <h4>Listagem de Produtos</h4>
+<span *ngIf="products | async; else loading"></span>
 <app-product-item *ngFor="let productEl of products | async; let i = index" [product]="productEl" [index]="i"></app-product-item>
+<ng-template #loading>
+  <div class="loader"></div>
+</ng-template>
